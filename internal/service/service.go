@@ -1,11 +1,13 @@
 package service
 
-type ArchiveInfo interface{}
+import "doodocs_rest_api/internal/entity"
 
 type Service struct {
-	ArchiveInfo
+	ArchiveInfo entity.ArchiveInfoService
 }
 
 func NewService() *Service {
-	return &Service{}
+	return &Service{
+		ArchiveInfo: NewArchiveInfoService(),
+	}
 }

@@ -13,3 +13,7 @@ type FileInfo struct {
 	Size     float64 `json:"size"`
 	MimeType string  `json:"mimetype"`
 }
+
+type ArchiveInfoService interface {
+	ProcessArchiveData(archive []byte) (ArchiveDetail, error)
+}
